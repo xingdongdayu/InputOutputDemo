@@ -1,7 +1,25 @@
 <div>
   app component
 </div>
+<!--<h4>Input demo</h4>-->
+<!--<div>-->
+  <!--<input type="text" placeholder="please enter stock code" [(ngModel)]="stock">-->
+  <!--<app-order [stockCode]="stock" [amount]="100"></app-order>-->
+<!--</div>-->
+<!--<br>-->
+
+<!--<h4>Output demo</h4>-->
+<!--&lt;!&ndash;事件绑定，与原生事件绑定方法一样，（事件名）&ndash;&gt;-->
+<!--<app-price-quote (lastPrice)="priceQuoteHandler($event)"></app-price-quote>-->
+<!--<div>-->
+  <!--Data received in App Component: The stock: {{priceQuote.stockCode}}, the price: ${{priceQuote.lastPrice | number:'2.2-2'}}-->
+<!--</div>-->
+<!--<br>-->
+
+<h4>Output mediator pattern demo</h4>
 <div>
-  <input type="text" placeholder="please enter stock code" [(ngModel)]="stock">
-  <app-order [stockCode]="stock" [amount]="100"></app-order>
+  App component is listening Quote Component emitting
 </div>
+<app-price-quote (buy)="buyHandler($event)"></app-price-quote>
+<app-order [priceQuote]="priceQuote"></app-order>
+

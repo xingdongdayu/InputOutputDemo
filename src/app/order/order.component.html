@@ -2,5 +2,7 @@
   order component
 </div>
 <div>
-  Buy {{amount}} stock: {{stockCode}}
+  <!--Data from input properties: Buy {{amount}} stock: {{stockCode}}-->
+
+  Data from Midiator: Buy stock: {{priceQuote.stockCode}}, price is ${{priceQuote.lastPrice | number: '2.2-2'}}
 </div>
